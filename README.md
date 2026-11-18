@@ -139,5 +139,7 @@ per language**. Raw third-party source files remain with their upstream
 repositories under their original licenses and are not redistributed here.
 Commit SHAs are supplied where content-verified; unresolved entries remain null.
 
-See [AVAILABILITY.md](AVAILABILITY.md) for the availability statements and
-GitHub/Zenodo publication links.
+## License
+
+RAMP-HSR is licensed under the
+[GNU Affero General Public License v3.0](LICENSE).
