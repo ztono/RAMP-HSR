@@ -1,0 +1,30 @@
+{
+  "format": "ramp_hsr_compact_sample_metadata_v1",
+  "counts": {
+    "python": {
+      "train": 2230488,
+      "test": 437434
+    },
+    "typescript": {
+      "train": 6564536,
+      "test": 1447823
+    }
+  },
+  "file_dictionary": "data/files.jsonl.gz; match integer file_id",
+  "row_identity": "language + split + source shard index + zero-based non-empty row index",
+  "row_fields": [
+    "file_id",
+    "absolute_position",
+    "target_original_absolute_position",
+    "identifier_length",
+    "target_split_offset",
+    "target_length",
+    "line",
+    "col"
+  ],
+  "source_text_redistributed": false,
+  "sample_builder_versions": [
+    "sample-builder"
+  ],
+  "scope": "Full Python and TypeScript raw source-example pools shared by Qwen and StarCoder2, as reported in paper Table B9."
+}

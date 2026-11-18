@@ -1,0 +1,64 @@
+{
+  "format": "ramp_hsr_reported_route_audit_v1",
+  "source": {
+    "table": "2",
+    "detector": "Risk route",
+    "sample_counts_table": "B9",
+    "values": "Reported paper values at their published precision; not a new experimental run."
+  },
+  "route_rule": {
+    "composite_threshold": 2.0,
+    "pair_threshold": 1.5,
+    "operator": "or"
+  },
+  "settings": [
+    {
+      "setting": "qwen_python",
+      "model": "Qwen2.5-Coder-1.5B",
+      "language": "Python",
+      "test_samples": 437434,
+      "coverage": 0.3072,
+      "precision": 0.9919,
+      "recall": 0.3337,
+      "fpr": 0.0288,
+      "lr_plus": 11.6,
+      "mcc": 0.1862
+    },
+    {
+      "setting": "qwen_typescript",
+      "model": "Qwen2.5-Coder-1.5B",
+      "language": "TypeScript",
+      "test_samples": 1447823,
+      "coverage": 0.4705,
+      "precision": 0.9881,
+      "recall": 0.5076,
+      "fpr": 0.0664,
+      "lr_plus": 7.65,
+      "mcc": 0.2452
+    },
+    {
+      "setting": "starcoder2_python",
+      "model": "StarCoder2-3B",
+      "language": "Python",
+      "test_samples": 437434,
+      "coverage": 0.4476,
+      "precision": 0.9784,
+      "recall": 0.515,
+      "fpr": 0.0646,
+      "lr_plus": 7.97,
+      "mcc": 0.3232
+    },
+    {
+      "setting": "starcoder2_typescript",
+      "model": "StarCoder2-3B",
+      "language": "TypeScript",
+      "test_samples": 1447823,
+      "coverage": 0.665,
+      "precision": 0.9873,
+      "recall": 0.739,
+      "fpr": 0.0754,
+      "lr_plus": 9.8,
+      "mcc": 0.4426
+    }
+  ]
+}

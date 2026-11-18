@@ -1,0 +1,115 @@
+{
+  "name": "qwen25_coder_1p5b_train_only_base_error_route_v1",
+  "node_z_threshold": 1.0,
+  "chain_active_fraction": 0.5,
+  "chains": [
+    {
+      "name": "dim_1412_layers_14_21_27",
+      "family": "base_first_token_error",
+      "weight": 1.0,
+      "nodes": [
+        "14:1412:+",
+        "21:1412:+",
+        "27:1412:+"
+      ]
+    },
+    {
+      "name": "ranked_top12_global_chain",
+      "family": "base_first_token_error",
+      "weight": 1.0,
+      "nodes": [
+        "7:1278:+",
+        "14:446:-",
+        "14:1278:+",
+        "21:1278:+",
+        "21:1381:-",
+        "21:1475:-",
+        "27:611:-",
+        "27:777:-",
+        "27:1052:+",
+        "27:1105:-",
+        "27:1278:+",
+        "27:1414:+"
+      ]
+    },
+    {
+      "name": "ranked_top3_per_layer_chain",
+      "family": "base_first_token_error",
+      "weight": 1.0,
+      "nodes": [
+        "7:300:-",
+        "7:1023:-",
+        "7:1278:+",
+        "14:300:-",
+        "14:446:-",
+        "14:1278:+",
+        "21:1278:+",
+        "21:1381:-",
+        "21:1475:-",
+        "27:611:-",
+        "27:1052:+",
+        "27:1278:+"
+      ]
+    },
+    {
+      "name": "ranked_top8_global_chain",
+      "family": "base_first_token_error",
+      "weight": 1.0,
+      "nodes": [
+        "7:1278:+",
+        "14:1278:+",
+        "21:1278:+",
+        "21:1475:-",
+        "27:611:-",
+        "27:777:-",
+        "27:1052:+",
+        "27:1278:+"
+      ]
+    },
+    {
+      "name": "ranked_top2_per_layer_chain",
+      "family": "base_first_token_error",
+      "weight": 1.0,
+      "nodes": [
+        "7:300:-",
+        "7:1278:+",
+        "14:446:-",
+        "14:1278:+",
+        "21:1278:+",
+        "21:1475:-",
+        "27:1052:+",
+        "27:1278:+"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "name": "train_pair_1_dim_1412_layers_14_21_27_ranked_top12_global_chain",
+      "left": "dim_1412_layers_14_21_27",
+      "right": "ranked_top12_global_chain",
+      "family": "base_first_token_error",
+      "weight": 1.0
+    },
+    {
+      "name": "train_pair_2_dim_1412_layers_14_21_27_ranked_top3_per_layer_chain",
+      "left": "dim_1412_layers_14_21_27",
+      "right": "ranked_top3_per_layer_chain",
+      "family": "base_first_token_error",
+      "weight": 1.0
+    },
+    {
+      "name": "train_pair_3_dim_1412_layers_14_21_27_ranked_top2_per_layer_chain",
+      "left": "dim_1412_layers_14_21_27",
+      "right": "ranked_top2_per_layer_chain",
+      "family": "base_first_token_error",
+      "weight": 1.0
+    },
+    {
+      "name": "train_pair_4_dim_1412_layers_14_21_27_ranked_top8_global_chain",
+      "left": "dim_1412_layers_14_21_27",
+      "right": "ranked_top8_global_chain",
+      "family": "base_first_token_error",
+      "weight": 1.0
+    }
+  ]
+}

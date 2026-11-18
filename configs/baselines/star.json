@@ -1,0 +1,57 @@
+{
+  "scope": "configuration_only",
+  "task_adaptation": "aligned RAMP target_token_id without re-tokenizing target text",
+  "max_context_tokens": 512,
+  "padding_side": "left",
+  "truncation_side": "left",
+  "heldout_protocol": {
+    "edit_samples": 2048,
+    "edit_pool": "base_errors_only",
+    "evaluation": "held-out error and preserve pools with no further editing",
+    "persistent_updates": true
+  },
+  "oracle_protocol": "restore model weights between individual repair rows",
+  "precision": "auto",
+  "method": "STAR",
+  "upstream_repository": "https://github.com/jianguda/star",
+  "upstream_commit": "69ba138a8fb1b1627af28cc61eb65df4e9b798c4",
+  "profile": {
+    "layer_policy": "all",
+    "lr": 0.01,
+    "steps": 10,
+    "max_step_delta": 0.1,
+    "modes": [
+      "single",
+      "multiple"
+    ],
+    "semantic_normalization": "IQR",
+    "intermediate_activation": "actual_second_FFN_projection_input",
+    "update": "analytical_prior_magnitude_times_negative_gradient_sign",
+    "multiple_batch_size": 16
+  },
+  "adaptation_notes": [
+    "For gated Qwen FFNs use the full multiplicative input to the second projection.",
+    "Enforce the paper-stated per-step parameter change bound.",
+    "STAR-multiple is reported only for persistent edit-set comparisons."
+  ],
+  "precision_resolution": {
+    "cuda": "float16",
+    "cpu": "float32"
+  },
+  "semantic_math_precision": "float32",
+  "edit_seed": 0,
+  "heldout_evaluation_seeds": [
+    0,
+    1
+  ],
+  "evaluation_export_fraction": 0.01,
+  "evaluation_sampling": "natural_prevalence",
+  "training_export": {
+    "fraction": 0.1,
+    "max_rows": 20000,
+    "validation_fraction": 0.1
+  },
+  "eval_batch_size": 16,
+  "alignment_check_samples": 1000,
+  "min_alignment": 0.99
+}

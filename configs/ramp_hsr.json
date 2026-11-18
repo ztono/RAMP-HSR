@@ -1,0 +1,61 @@
+{
+  "method": "RAMP-HSR",
+  "architecture": {
+    "editor_input": "post_norm_hidden_state",
+    "normalization": "parameter_free_layer_norm",
+    "residual_width": 256,
+    "strength_width": 256,
+    "residual_bias": false,
+    "activation": "gelu",
+    "learned_strength": true,
+    "route_features_enter_editor": false
+  },
+  "training": {
+    "epochs": 5,
+    "seed": 13,
+    "global_batch_size": 32,
+    "optimizer": "AdamW",
+    "lr": 0.0001,
+    "weight_decay": 0.01,
+    "precision": "float32",
+    "max_context_tokens": 512,
+    "lambda_margin": 0.2,
+    "lambda_preserve": 0.5,
+    "lambda_preserve_margin": 0.75,
+    "lambda_l2": 0.0001,
+    "margin": 1.0,
+    "preserve_margin": 1.0,
+    "preserve_pool": "base_correct_only",
+    "temperature": 1.0
+  },
+  "settings": {
+    "qwen_python": {
+      "base_model": "Qwen/Qwen2.5-Coder-1.5B",
+      "hidden_dim": 1536,
+      "effective_parameters": 1180161,
+      "train_rows": 2230488,
+      "eval_rows": 437434
+    },
+    "qwen_typescript": {
+      "base_model": "Qwen/Qwen2.5-Coder-1.5B",
+      "hidden_dim": 1536,
+      "effective_parameters": 1180161,
+      "train_rows": 6564536,
+      "eval_rows": 1447823
+    },
+    "starcoder2_python": {
+      "base_model": "bigcode/starcoder2-3b",
+      "hidden_dim": 3072,
+      "effective_parameters": 2359809,
+      "train_rows": 2230488,
+      "eval_rows": 437434
+    },
+    "starcoder2_typescript": {
+      "base_model": "bigcode/starcoder2-3b",
+      "hidden_dim": 3072,
+      "effective_parameters": 2359809,
+      "train_rows": 6564536,
+      "eval_rows": 1447823
+    }
+  }
+}

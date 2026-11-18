@@ -1,0 +1,112 @@
+{
+  "name": "bigcode_starcoder2_3b_train_only_base_error_route_v1",
+  "node_z_threshold": 1.0,
+  "chain_active_fraction": 0.5,
+  "chains": [
+    {
+      "name": "ranked_top12_global_chain",
+      "family": "base_error",
+      "weight": 1.0,
+      "nodes": [
+        "7:2989:-",
+        "14:842:-",
+        "14:1401:+",
+        "14:2539:+",
+        "21:842:-",
+        "21:2920:-",
+        "29:253:+",
+        "29:1089:-",
+        "29:1509:-",
+        "29:1905:+",
+        "29:2989:-",
+        "29:3031:+"
+      ]
+    },
+    {
+      "name": "ranked_top8_global_chain",
+      "family": "base_error",
+      "weight": 1.0,
+      "nodes": [
+        "14:842:-",
+        "14:1401:+",
+        "21:842:-",
+        "21:2920:-",
+        "29:253:+",
+        "29:1089:-",
+        "29:1509:-",
+        "29:2989:-"
+      ]
+    },
+    {
+      "name": "ranked_top4_global_chain",
+      "family": "base_error",
+      "weight": 1.0,
+      "nodes": [
+        "29:253:+",
+        "29:1089:-",
+        "29:1509:-",
+        "29:2989:-"
+      ]
+    },
+    {
+      "name": "ranked_top3_per_layer_chain",
+      "family": "base_error",
+      "weight": 1.0,
+      "nodes": [
+        "7:1401:+",
+        "7:2560:+",
+        "7:2989:-",
+        "14:842:-",
+        "14:1401:+",
+        "14:2539:+",
+        "21:842:-",
+        "21:1031:-",
+        "21:2920:-",
+        "29:253:+",
+        "29:1509:-",
+        "29:2989:-"
+      ]
+    },
+    {
+      "name": "ranked_top1_per_layer_chain",
+      "family": "base_error",
+      "weight": 1.0,
+      "nodes": [
+        "7:2989:-",
+        "14:842:-",
+        "21:842:-",
+        "29:2989:-"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "name": "train_pair_1_ranked_top4_global_chain_ranked_top3_per_layer_chain",
+      "left": "ranked_top4_global_chain",
+      "right": "ranked_top3_per_layer_chain",
+      "family": "base_error",
+      "weight": 1.0
+    },
+    {
+      "name": "train_pair_2_ranked_top4_global_chain_ranked_top1_per_layer_chain",
+      "left": "ranked_top4_global_chain",
+      "right": "ranked_top1_per_layer_chain",
+      "family": "base_error",
+      "weight": 1.0
+    },
+    {
+      "name": "train_pair_3_ranked_top3_per_layer_chain_ranked_top1_per_layer_chain",
+      "left": "ranked_top3_per_layer_chain",
+      "right": "ranked_top1_per_layer_chain",
+      "family": "base_error",
+      "weight": 1.0
+    },
+    {
+      "name": "train_pair_4_ranked_top12_global_chain_ranked_top3_per_layer_chain",
+      "left": "ranked_top12_global_chain",
+      "right": "ranked_top3_per_layer_chain",
+      "family": "base_error",
+      "weight": 1.0
+    }
+  ]
+}
